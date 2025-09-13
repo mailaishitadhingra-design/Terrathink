@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraThink - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .mobile-container {
+            width: 100%;
+            max-width: 440px;
+            height: 100vh;
+            background-color: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 0;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+        }
+
+        @media (min-width: 640px) {
+            .mobile-container {
+                height: 90vh;
+                border-radius: 2rem;
+                border: 10px solid #2d3748;
+            }
+        }
+
+        .login-card {
+            width: 90%;
+            max-width: 360px;
+            padding: 2.5rem;
+            text-align: center;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            border: 1px solid #d1d5db;
+            margin-top: 0.5rem;
+            transition: border-color 0.2s ease-in-out;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #10B981;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #10B981;
+            color: white;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            margin-top: 1.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+        
+        .login-button:hover {
+            background-color: #059669;
+        }
+    </style>
+</head>
+<body>
+    <div class="mobile-container">
+        <div class="login-card">
+            <h1 class="text-4xl font-extrabold text-gray-800 mb-2">TerraThink</h1>
+            <p class="text-sm text-gray-500 mb-8">the future of tech should be green, not grey.</p>
+            
+            <form onsubmit="handleLogin(event)">
+                <div class="space-y-4 text-left">
+                    <div>
+                        <label for="username" class="text-sm font-medium text-gray-700">Username</label>
+                        <input type="text" id="username" class="input-field" placeholder="john.doe" required>
+                    </div>
+                    <div>
+                        <label for="password" class="text-sm font-medium text-gray-700">Password</label>
+                        <input type="password" id="password" class="input-field" placeholder="••••••••" required>
+                    </div>
+                </div>
+                
+                <button type="submit" class="login-button">Log In</button>
+            </form>
+            
+            <p class="mt-4 text-sm text-gray-600">Don't have an account? 
+                <a href="#" class="text-green-600 font-semibold hover:underline">Sign Up</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            window.location.href = 'permissions.html';
+        }
+    </script>
+</body>
+</html>
